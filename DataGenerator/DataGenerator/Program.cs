@@ -13,14 +13,14 @@ namespace DataGenerator
 
         public static void GenerateTrainingData()
         {
-            using (StreamWriter streamWriter = new StreamWriter("trainingData10^9"))
+            using (StreamWriter streamWriter = new StreamWriter("trainingSet"))
             {
                 Random random = new Random();
                 SortedSet<int> numbers = new SortedSet<int>();
                 do
                 {
-                    numbers.Add(random.Next(100000000, 1000000000));
-                } while (numbers.Count !=100);
+                    numbers.Add(random.Next(1, 100));
+                } while (numbers.Count != 25);
 
                 foreach(int value in numbers)
                 {

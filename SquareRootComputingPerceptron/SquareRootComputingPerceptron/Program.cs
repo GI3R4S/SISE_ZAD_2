@@ -141,7 +141,7 @@ namespace MLP
         #region DataExtraction
         public static void LoadTrainingData()
         {
-            StreamReader streamReader = new StreamReader("trainingSet");
+            StreamReader streamReader = new StreamReader("../../trainingSet");
             string[] fileStrings = streamReader.ReadToEnd().Replace('\n', ' ').Split(' ');
             int value = 0;
             double sqrt = 0;
@@ -163,7 +163,7 @@ namespace MLP
 
         public static void LoadTestingData()
         {
-            string[] fileNames = Directory.GetFiles(".").Where(p => p.Contains("testingSet")).ToArray();
+            string[] fileNames = Directory.GetFiles("../..").Where(p => p.Contains("testingSet")).ToArray();
             foreach(string fileName in fileNames)
             {
                 testingData.Add(new List<KeyValuePair<int, double>>());
